@@ -1,0 +1,11 @@
+({
+    doInit : function(component, event, helper) {
+        var obj = component.get("v.parseObject");
+        console.log('obj :: '+JSON.stringify(obj));
+        console.log('pro :: '+component.get("v.property"));
+        var val = String(obj[component.get("v.property")]);
+        console.log('val :: '+val);
+        component.set("v.value",val);
+
+    }
+})
