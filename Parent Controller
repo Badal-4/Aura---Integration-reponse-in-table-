@@ -1,0 +1,61 @@
+({
+    /*doInit : function (component, event, helper) {      
+        helper.getReportData(component);     
+    },*/
+    doInit : function(component,event,helper)
+    {
+        helper.getReportData(component);
+          
+    },
+    
+    handleClick : function(component,event,helper)
+    {   
+      
+       let value = event.getParam("value");
+   
+        if(value == 'Run')
+        {
+          helper.handleRun(component,event,helper,event.getSource().get("v.name"),event.getSource().get("v.class"));
+        }
+         else if(value == 'Export')
+         {
+           helper.downloadSelectedReport(component,event,helper);
+         }
+        //  else if(value == 'Favourite')
+        //  {
+        //    helper.updateFavourite(component,event,helper);
+        //  }
+        //  else if(value == 'Unfavourite')
+        //  {
+        //    //helper.updateUnfavourite(component,event,helper);
+        //    helper.updateFavourite(component,event,helper);
+        //  }
+        //  else if(value == 'Subscribe')
+        //  {
+        //     helper.updateSubscribe(component,event,helper);
+        //  }
+        //  else if(value == 'Unsubscribe')
+        //  {
+        //     helper.updateSubscribe(component,event,helper);
+        //  }
+    },
+
+    updateFavourite : function(component,event,helper){
+      
+        helper.updateFavourite(component,event,helper);
+    },
+
+    openReport : function(component,event,helper)
+    {
+      helper.handleRun(component,event,helper,event.target.id,event.target.className);
+      //   var eventId = event.target.id;
+      //   console.log(eventId);
+        
+      //   var url = window.location.origin + '/community/s/custom-report-detail?endp='+eventId;
+      //  window.open(url,'_blank');
+      //  var tempid = event.target.className;
+      //   console.log(tempid);
+      //   helper.updateLastAcc(component,event,helper,tempid);
+    }
+    
+ })
